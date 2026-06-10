@@ -7,6 +7,6 @@ COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 COPY . .
+RUN chmod +x start.sh
 
-ENV PORT=8080
-CMD ["sh", "-c", "exec gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 8 --timeout 300"]
+CMD ["/bin/sh", "start.sh"]
