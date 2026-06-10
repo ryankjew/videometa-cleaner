@@ -1,2 +1,3 @@
 #!/bin/sh
-exec gunicorn app:app --bind 0.0.0.0:$PORT --workers 2 --threads 8 --timeout 300
+echo "Porta: $PORT"
+gunicorn app:app --bind "0.0.0.0:${PORT}" --workers 2 --threads 8 --timeout 300
